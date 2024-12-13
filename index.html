@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.com.GAMERS HUB</title>
+    <link rel="icon" href="./IMAGEN/WhatsApp_Image_2024-10-25_at_10.04.14_AM-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos del modal */
+        #modal {
+            display: block; /* El modal se muestra por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .modal-header {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .modal-footer {
+            text-align: right;
+        }
+        .close-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Modal (Ventana emergente) -->
+    <div id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Aceptar Condiciones</h2>
+            </div>
+            <p>Al continuar, aceptas los términos y condiciones de uso de GAMERS HUB.</p>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="aceptarCondiciones()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <img src="./IMAGEN/WhatsApp_Image_2024-10-25_at_10.04.14_AM-removebg-preview.png" alt="Logo Derecha" class="logo">
+        <h1>🎮 CUENTAS DE JUEGOS 🎮</h1>
+        <img src="./IMAGEN/WhatsApp_Image_2024-10-25_at_10.04.14_AM-removebg-preview.png" alt="Logo Derecha" class="logo">
+    </header>
+    
+    <!-- Contenedor de tarjetas -->
+    <main class="cards-container">
+        <div class="card">
+            <a href="CUENTAS DE MOBA.HTML">
+                <img src="https://i0.wp.com/gamingonphone.com/wp-content/uploads/2021/02/Mobile-Legends-Hero.jpg" alt="Mobile Legends">
+                <h3>MOBILE LEGENS</h3>
+                <p>Cuentas premium disponibles ahora.</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="CUENTAS DE FREE.HTML">
+                <img src="https://imgmedia.larepublica.pe/640x371/larepublica/original/2021/11/23/619cf3aaa6148331076a7194.webp" alt="Free Fire">
+                <h3>FREE FIRE</h3>
+                <p>Cuentas con skins exclusivas.</p>
+            </a>
+        </div>
+        <div class="card">
+            <a href="CUENTAS DE  CLASH.HTML">
+                <img src="./IMAGEN/clash-royale-67pap6bmkrprchab.jpg" alt="Vende tu cuenta">
+                <h3>CLASH ROYALE</h3>
+                <p>Elige tu cuenta ya.</p>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Función para aceptar condiciones
+        function aceptarCondiciones() {
+            document.getElementById("modal").style.display = "none"; // Cerrar el modal
+        }
+    </script>
+</body>
+</html>

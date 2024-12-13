@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta de Juego</title>
+    <style>
+        /* Estilos de la tarjeta */
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h3 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="cardContainer"></div>
+
+    <script>
+        // Recuperar la tarjeta del localStorage
+        const newCard = localStorage.getItem("newCard");
+
+        // Si existe, mostrar la tarjeta
+        if (newCard) {
+            document.getElementById("cardContainer").innerHTML = newCard;
+        } else {
+            document.getElementById("cardContainer").innerHTML = "<p>No se encontró ninguna tarjeta.</p>";
+        }
+    </script>
+</body>
+</html>

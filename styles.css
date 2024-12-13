@@ -1,0 +1,258 @@
+/* Variables de colores */
+:root {
+  --primary-color: #FF5733;
+  --secondary-color: #4CAF50;
+  --background-color: #F9F9F9;
+  --text-color: #333;
+  --white: #FFFFFF;
+}
+
+/* Estilos generales para el cuerpo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex; /* Asegura que los elementos se organicen en una fila */
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  text-align: center;
+  padding: 20px 0;
+  justify-content: space-between; /* Distribuye los elementos equitativamente */
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+  align-items: center; /* Alinea verticalmente al centro */
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 70px;
+  text-align: center;
+}
+
+.logo {
+  height: 150px; /* Tamaño del logo */
+  width: auto;
+}
+
+/* Estilo de las tarjetas */
+/* Tipografía de estilo gamer */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px auto;
+  flex-wrap: wrap;
+  padding: 0 5px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  font-family: 'Press Start 2P', cursive; /* Tipografía de estilo gamer */
+}
+
+/* Efecto de luz animada alrededor de la imagen */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Brillo naranja inicial */
+  transition: box-shadow 0.5s ease-in-out; /* Transición suave al cambiar el brillo */
+}
+
+.card:hover img {
+  animation: glow 1.5s infinite alternate; /* Anima el brillo alrededor de la imagen */
+}
+
+/* Animación de luz */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.7), 0 0 30px rgba(255, 165, 0, 0.5), 0 0 45px rgba(255, 165, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 165, 0, 1), 0 0 50px rgba(255, 165, 0, 0.7), 0 0 75px rgba(255, 165, 0, 0.5);
+  }
+}
+
+/* Efecto hover en la tarjeta */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de los títulos y descripción */
+.card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Redes sociales */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 20px 0;
+}
+
+.social-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+}
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.videos-container div {
+  flex: 1 1 calc(33% - 20px);
+  max-width: 560px;
+  aspect-ratio: 16/9; /* Relación de aspecto para los videos */
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* Estilos para el pie de página */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 15px 0;
+  height: 25px;
+}
+
+/* Estilo del modal para la venta de cuentas */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 1spx;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  background-color: #28a745;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FF5733;
+}
+
+/* Estilo para el botón "Volver al Inicio" */
+.back-button {
+  background-color: #FF5733;
+  color: var(--white);
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}

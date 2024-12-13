@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compra cuentas de Free Fire con entrega instantánea.">
+    <meta property="og:title" content="Cuentas Free Fire | Eldorado.gg">
+    <meta property="og:description" content="Listado de cuentas de Free Fire disponibles para comprar.">
+    <meta property="og:image" content="URL_de_imagen_de_previsualización">
+    <meta property="og:url" content="URL_de_tu_página">
+    <title>Cuentas Free Fire | GAMERS HUB</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header, footer { background-color: #FF5733; color: white; padding: 1rem; text-align: center; }
+        section { padding: 1rem; }
+        .account-listing { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .account { background: white; border: 1px solid #ddd; margin: 1rem; padding: 1rem; width: 300px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .account h3 { margin: 0.5rem 0; font-size: 1.2rem; }
+        .account p { margin: 0.5rem 0; color: #555; }
+        .account img { width: 100%; height: auto; max-width: 150px; border-radius: 8px; margin-bottom: 1rem; transition: box-shadow 0.3s ease; }
+        .account a { color: #fff; background-color: #FF5733; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 1rem; }
+        .account-price { font-size: 1.5rem; color: #FF5733; margin-top: 1rem; }
+
+        @media (max-width: 600px) {
+            .account-listing {
+                flex-direction: column;
+                align-items: center;
+            }
+            .account {
+                width: 90%;
+            }
+        }
+
+        /* Efecto de luz en la imagen */
+        .account:hover img {
+            box-shadow: 0 0 15px rgba(255, 87, 51, 0.8); /* Luz anaranjada */
+        }
+
+        /* Efecto en el contenedor de la cuenta */
+        .account:hover {
+            transform: translateY(-5px); /* Desplazamiento hacia arriba */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra alrededor */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f3f3f3;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .back-button:hover {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        .button-icon {
+            width: 40px;
+            height: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <img src="./IMAGEN/pngtree-arrow-arrows-back-point-back-png-image_1623605.jpg" alt="Ícono de regreso" class="button-icon">
+        </a>
+        <h1>🎮 COMPRA DE CUENTAS DE FREEFIRE 🎮</h1>
+    </header>
+    <section>
+        <h2>CUENTAS DISPONIBLES</h2>
+        <div class="account-listing" id="account-listing"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2020 GAMERS HUB.ZZ</p>
+    </footer>
+
+    <script>
+        // Datos de las cuentas
+        const accounts = [
+            {
+                title: "Level 60 | Legendary Weapons",
+                region: "Sur",
+                seller: "DigiGames (100%)",
+                delivery: "Al instante",
+                price: "s/.89,99",
+                imageUrl: "https://i.pinimg.com/236x/3c/9b/61/3c9b619a0b81cb426d129ad28f211fa1.jpg",
+                link: "https://wa.me/+51991790589?text=Hola,%20quiero%20comprar%20la%20cuenta%20Level%2060%20Legendary%20Weapons%20por%2089.99$"
+            },
+            {
+                title: "Level 54 | FASHION 426",
+                region: "Sur",
+                seller: "clash_store_safe (98,9%)",
+                delivery: "Al instante",
+                price: "56,00 US$",
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ENv1tYeDpLYxcDwZaY0X8yZvWU8atBaTc1H-7Jf8p4776-XwNNFNywgUto9C9E82HB4&usqp=CAU",
+                link: "https://wa.me/+51928097685?text=Hola,%20quiero%20comprar%20la%20cuenta%20Level%2054%20FASHION%20426%20por%2056.00$"
+            },
+            {
+                title: "Level 64 | FASHION 974 | 6 Guns",
+                region: "Sur",
+                seller: "clash_store_safe (98,9%)",
+                delivery: "Al instante",
+                price: "164,00 US$",
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAlwKux5z0qDWhFOXb1nnlIFHHfCb9XBvS2HcbvFvz1zDzeq4TYxl8H2UT2r7uEVWEL-w&usqp=CAU",
+                link: "https://wa.me/+51928097685?text=Hola,%20quiero%20comprar%20la%20cuenta%20Level%2064%20FASHION%20974%20por%20164.00$"
+            }
+            // Agregar más cuentas aquí
+        ];
+
+        // Función para generar las cuentas en el HTML
+        function loadAccounts() {
+            const accountListing = document.getElementById('account-listing');
+            accounts.forEach(account => {
+                const accountDiv = document.createElement('div');
+                accountDiv.classList.add('account');
+                accountDiv.innerHTML = `
+                    <img src="${account.imageUrl}" alt="Cuenta ${account.title}">
+                    <h3>${account.title}</h3>
+                    <p>Region: ${account.region}</p>
+                    <p>Vendedor: ${account.seller}</p>
+                    <p>Entrega: ${account.delivery}</p>
+                    <div class="account-price">${account.price}</div>
+                    <a href="${account.link}" target="_blank">Comprar</a>
+                `;
+                accountListing.appendChild(accountDiv);
+            });
+        }
+
+        // Llamar a la función cuando se cargue la página
+        window.onload = loadAccounts;
+    </script>
+</body>
+</html>
